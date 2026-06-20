@@ -42,7 +42,7 @@ $result = $conn->query("SELECT * FROM products ORDER BY id DESC");
                         <tr>
                             <td><?php echo htmlspecialchars($row['id']); ?></td>
                             <td><?php echo htmlspecialchars($row['product_name']); ?></td>
-                            <td><?php echo htmlspecialchars($row['price']); ?></td>
+                            <td>Rs. <?php echo htmlspecialchars($row['price']); ?></td>
                             <td><?php echo htmlspecialchars($row['quantity']); ?></td>
                             <td><?php echo htmlspecialchars($row['category']); ?></td>
                             <td><?php echo htmlspecialchars($row['status']); ?></td>

@@ -79,10 +79,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare($sql);
         
         if ($stmt) {
-            $stmt->bind_param("ssdisssa", $product_name, $description, $price, $quantity, $category, $image_url, $status, $id);
+            $stmt->bind_param("ssdisssi", $product_name, $description, $price, $quantity, $category, $image_url, $status, $id);
             
             if ($stmt->execute()) {
-                $success = true;
+                header('Location: view_products.php');
+                exit;
             } else {
                 $errors[] = "Error updating product: " . $stmt->error;
             }
